@@ -5,8 +5,21 @@
 # Hint: remember that with object oriented programming the object holds values in the attributes to describe it's current state. Even when we aren't reading it's attributes, they should be up to date.
 
 class Tree
-  def rings
-    
+  attr_reader :rings
+  def initialize
+    @rings = 0
+  end
+
+  def bear_fruit?
+    if @rings.between?(7, 14)
+      true
+    else
+      false
+    end
+  end
+
+  def winter_season
+    @rings = @rings + 1
   end
 end
 # Driver code - don't touch anything below this line.
