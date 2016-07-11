@@ -14,8 +14,8 @@
 # if a Superhero is attacked and their hitpoints are less than 1, they are no longer alive
 # Superhero needs a grab_tool method, that sets the has_special_tool attribute to true.
 class Superhero
-  attr_reader :hitpoints, :attack, :has_special_tool, :name
-  attr_writer :hitpoints, :attack, :has_special_tool, :name
+  attr_reader :hitpoints, :attack, :has_special_tool, :name, :alive
+  attr_writer :hitpoints, :attack, :has_special_tool, :name, :alive
   def initialize(attributes)
     @name = attributes[:name]
     @hitpoints = attributes[:hitpoints]
@@ -31,12 +31,6 @@ class Superhero
     end
     superhero.hitpoints = superhero.hitpoints - @attack
     if superhero.hitpoints < 1
-      @alive = false
-    end
-  end
-
-  def alive
-    if @hitpoints < 1
       @alive = false
     end
   end
